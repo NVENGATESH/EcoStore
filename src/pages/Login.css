@@ -1,0 +1,152 @@
+.loginContainer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+   background-color: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    
+}
+.loginwholediv{
+    width: 80%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+   
+    border-radius: 1rem;
+    overflow: hidden;
+    /* min-height: 350px; */
+}
+.loginwholediv .loginFirstConatiner{
+    width: 50%;
+ background: linear-gradient(270deg, #10b981, #34d399, #059669);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ padding: 20px;
+ text-align: center;
+}
+.loginFirstConatiner .loginFirstConatinercontent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.loginFirstConatiner .loginFirstConatinercontent h1{
+    font-size: 50px;
+    font-weight: 800px;
+    text-align: start;
+    color: white;
+
+}
+.loginFirstConatiner .loginFirstConatinercontent p{
+    font-size: 20px;
+width: 95%;
+text-align: start;
+}
+
+.loginFirstConatinercontent .loginFirstConatinercontentimgcontainer{
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+     border-radius: 16px;
+     margin: auto;
+     
+
+}
+.loginFirstConatinercontentimgcontainer img{
+    width: 100%;
+    height: 100%;
+    /* border-radius: 16px; */
+
+}
+.loginFirstConatinercontentimgcontainer img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s linear;
+}
+
+.loginwholediv .loginSecoundcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 50%;
+padding: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.UsernameCon, .Passwordcon {
+  position: relative;
+
+  margin: 20px;
+}
+.UsernameCon input, .Passwordcon input {
+   width: 100%;
+  padding: 13px;
+  border-radius: 13px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+}
+
+.UsernameCon label, .Passwordcon label {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  transition: 0.18s ease;
+  color: #888;
+  pointer-events: none;
+  padding: 0 6px;
+  background: transparent;
+}
+
+.UsernameCon input:focus +label,
+.Passwordcon input:focus +label,
+.UsernameCon input:not(:placeholder-shown) + label,
+.Passwordcon input:not(:placeholder-shown) + label {
+    top: -8px;
+     left: 10px;
+  font-size: 12px;
+  color: #059669;
+  background-color: white
+}
+.loginSecoundcontainer button{
+    
+    width: 40%;
+    padding: 13px;
+    border: none;
+    border-radius: 16px;
+      margin: 20px;
+      margin-top: 0px;
+     background: linear-gradient(270deg, #10b981, #34d399, #059669);
+   
+    
+     /* background: linear-gradient(270deg, #10b981, #34d399, #059669); */
+   
+}
+@media screen and (max-width: 800px) {
+.loginwholediv{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+   
+    border-radius: 1rem;
+    overflow: hidden;
+    /* min-height: 350px; */
+}
+.loginwholediv .loginFirstConatiner{
+    width: 100%;
+
+}
+.loginwholediv .loginSecoundcontainer{
+    width: 100%;
+}
+ 
+}

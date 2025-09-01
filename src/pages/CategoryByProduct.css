@@ -1,0 +1,61 @@
+.CategoryByProductSection{
+    min-height: 100vh;
+   
+    padding: 20px;
+}
+.CategoryByProductSection .Categoricon{
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.catogorislistcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.catogorislistcon span{
+width: max-content;
+text-align: center;
+padding: 5px 20px;
+border: 1px solid wheat;
+border-radius: 44px;
+background-color: white;
+
+}
+.Sorterbycategorieslist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  
+}
+
+.Sorterbycategorieslist select{
+
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+}
+.catogorislistcon .categoreis{
+    cursor: pointer;
+}
+.Productlistcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 100px 30px ;
+    
+}
+@media (max-width: 765px) {
+.CategoryByProductSection{
+    padding: 20px 0px;
+}
+}

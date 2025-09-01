@@ -1,0 +1,79 @@
+.addProductSection {
+  min-height: 100vh;
+  background-color: white;
+  padding: 20px;
+}
+.addProductSection h1{
+    text-align: center;
+    margin: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.addProductContainet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addProductContainet form {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.addProductContainet form input,
+.addProductContainet form select {
+  width: 100%;
+  padding: 13px;
+  border-radius: 0.375rem;
+  border: 0.01px solid #dee2e6;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.addProductContainet form input:focus,
+.addProductContainet form select:focus {
+  color: #212529;
+  background-color: #fff;
+  outline: 0;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.addProductContainet form label {
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px;
+}
+.addProductContainet form button {
+  width: 25%;
+  background-color: #0d6efd;
+  padding: 10px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 0.375rem;
+}
+.addProductContainet form .productflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.addProductContainet form .Productimage input{
+    cursor: pointer;
+}
+.addProductContainet form .productflex .productsdetails {
+  width: 50%;
+}
+@media (max-width: 720px) {
+
+  .addProductContainet form .productflex .productsdetails {
+width: 100%
+  }
+  .addProductContainet form .productflex {
+flex-direction: column
+  }
+  .addProductContainet form {
+width: 100%;
+
+  }
+}

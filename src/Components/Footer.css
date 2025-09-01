@@ -1,0 +1,81 @@
+.footersection{
+    min-height: 40vh;
+    background-color: #111827;
+   /* padding: 20px; */
+   color: gray;
+
+}
+.footersection h4{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+.footersection h4:hover{
+    color: gray;
+}
+.footersection ul{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+}
+.footersection ul li:hover{
+    color: white;
+}
+.footerfircon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.foot4 .foot4content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+}
+.foot4 .foot4content input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+.foot4 .foot4content button{
+     border: none;
+    padding: 10px 30px ;
+    background-color:#047857 ;
+    border-radius:8px;
+    color: white;
+    margin: 10px;
+}
+
+.footersecon{
+    width: 100%;
+    padding: 10px;
+   
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.footline{
+    height: 1px;
+    background-color: gray;
+    margin: 10px 0px;
+}
+.footcopyrites{
+    text-align: center;
+ margin-top: 35px;
+  padding-bottom: 10px;
+}
+.footname{
+    color: purple;
+}
+.footname:hover{
+    color: white;
+}

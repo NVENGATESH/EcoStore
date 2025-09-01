@@ -1,0 +1,97 @@
+.CartSection{
+    min-height: 100vh;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.CartSection >h1{
+    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 30px;
+    text-align: center;
+}
+.cartContainer{
+    width: 80%;
+    /* background-color: aqua; */
+    padding: 20px;
+    
+}
+.carts{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+}
+.cartContainer h1{
+    font-weight: 800;
+}
+.cartContainer h2{
+    font-weight: 600;
+}
+.cartContainer button{
+         
+  background-color:#059669;
+  padding: 10px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 0.375rem;
+
+}
+
+.cartProductimg{
+    width: 40%;
+}
+.cartProductimgcon{
+    width: 300px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.cartProductimgcon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cartContainer .line{
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    margin: 10px 0px;
+}
+.cartProductcontent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.cartProductcontent .pricecon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.cartProductcontent .pricecon span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.total {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+
+}
+.chesckoutbtn{
+         
+  background-color:#059669;
+  padding: 10px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 0.375rem;
+  
+}
