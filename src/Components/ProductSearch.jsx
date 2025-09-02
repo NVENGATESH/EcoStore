@@ -14,7 +14,7 @@ export default function ProductSearch() {
     const searchProductFetch = async () => {
       try {
         const responce = await axios.get(
-          `http://localhost:8080/api/public/products/keyword/${keyword}`
+          `https://ecostore-970g.onrender.com/api/public/products/keyword/${keyword}`
         );
         console.log(responce.data.content);
         setSearchProduct(responce.data.content);
@@ -29,7 +29,7 @@ export default function ProductSearch() {
   const fetchImage = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/public/product/${id}/image`,
+        `https://ecostore-970g.onrender.com/api/public/product/${id}/image`,
         {
           responseType: "blob",
         }

@@ -11,7 +11,7 @@ export default function ProductInformation() {
     const fetchProductInfo = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/public/products/${id}`,
+          `https://ecostore-970g.onrender.com/api/public/products/${id}`,
           {
             // headers: {
             //   Authorization: `Bearer ${localStorage.getItem("token")}`, // only if JWT secured
@@ -27,7 +27,7 @@ export default function ProductInformation() {
     const fetchImage = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/public/product/${id}/image`,
+          `https://ecostore-970g.onrender.com/api/public/product/${id}/image`,
           {
             // headers: {
             //   Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -57,7 +57,7 @@ export default function ProductInformation() {
   const deleteProductById = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8080/api/admin/products/${id}`, // use correct admin endpoint
+        `https://ecostore-970g.onrender.com/api/admin/products/${id}`, // use correct admin endpoint
         {
           headers: {
             // Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -90,7 +90,7 @@ export default function ProductInformation() {
   const AddProduct = async (AddcartId) => {
     try {
       const addCartResponce = await axios.post(
-        `http://localhost:8080/api/admin/carts/${AddcartId}`,
+        `https://ecostore-970g.onrender.com/api/admin/carts/${AddcartId}`,
         {
           headers: {
             // Authorization: `Bearer ${localStorage.getItem("token")}`,

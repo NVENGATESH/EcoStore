@@ -54,7 +54,7 @@ export default function AddProduct() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/public/categories/${categoryId}/products`,
+        `https://ecostore-970g.onrender.com/api/public/categories/${categoryId}/products`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

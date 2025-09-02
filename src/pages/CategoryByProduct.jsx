@@ -23,11 +23,11 @@ export default function CategoryByProduct() {
         setToken(token);
 
         // Fetch categories
-        const categoryRes = await axios.get("http://localhost:8080/api/public/categories");
+        const categoryRes = await axios.get("https://ecostore-970g.onrender.com/api/public/categories");
         setCategories([{ categoryId: 0, categoryName: "All" }, ...categoryRes.data.content]);
 
         // Fetch all products
-        const productRes = await axios.get("http://localhost:8080/api/public/products");
+        const productRes = await axios.get("https://ecostore-970g.onrender.com/api/public/products");
         setProduct(productRes.data.content);
 
         // Fetch images for products
@@ -46,11 +46,11 @@ export default function CategoryByProduct() {
         setToken(token);
 
         // Fetch categories
-        const categoryRes = await axios.get("http://localhost:8080/api/public/categories");
+        const categoryRes = await axios.get("https://ecostore-970g.onrender.com/api/public/categories");
         setCategories([{ categoryId: 0, categoryName: "All" }, ...categoryRes.data.content]);
 
         // Fetch all products
-        const productRes = await axios.get("http://localhost:8080/api/public/products");
+        const productRes = await axios.get("https://ecostore-970g.onrender.com/api/public/products");
         setProduct(productRes.data.content);
 
         // Fetch images for products
@@ -65,7 +65,7 @@ export default function CategoryByProduct() {
 
   const fetchImage = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/public/product/${id}/image`, {
+      const response = await axios.get(`https://ecostore-970g.onrender.com/api/public/product/${id}/image`, {
         responseType: "blob",
       });
       const url = URL.createObjectURL(response.data);
