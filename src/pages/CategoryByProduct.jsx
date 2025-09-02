@@ -114,18 +114,25 @@ export default function CategoryByProduct() {
       </div>
 
       <div className="Productlistcon">
-        {filteredProducts.map((p) => (
-          <ProductCard
-            key={p.productId}
-            id={p.productId}
-            description={p.description}
-            title={p.productName}
-            price={p.price}
-            badge="BestSeller"
-            image={imageUrls[p.productId]}
-            handlekey={handleProductClick}
-          />
-        ))}
+       {filteredProducts.length > 0 ? (
+  filteredProducts.map((p) => (
+    <ProductCard
+      key={p.productId}
+      id={p.productId}
+      description={p.description}
+      title={p.productName}
+      price={p.price}
+      badge="BestSeller"
+      image={imageUrls[p.productId]}
+      handlekey={handleProductClick}
+    />
+  ))
+) : (
+  <p className="text-center text-gray-500 text-lg mt-4">
+    No products found
+  </p>
+)}
+
       </div>
     </section>
   );

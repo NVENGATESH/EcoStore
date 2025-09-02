@@ -76,6 +76,11 @@
 
 .ProducSeccon p{
    overflow: hidden;
+   /* background-color: #059669; */
+   height: 60px;
+   overflow: hidden;
+   line-height: 30px;
+   letter-spacing: 0.4px;
 }
 
 
@@ -116,6 +121,9 @@
   background-color: #047857;
 }
 
+.productbtn span{
+    font-weight: bold;
+}
 @media (max-width: 765px) {
 .Productlistcon{
     padding:30px 0px;
