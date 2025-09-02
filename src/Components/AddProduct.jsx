@@ -1,165 +1,8 @@
-// //  productName: "",
-// //     description: "",
-// //     price: "",
-// //     quantity: "",
-// //     discount: "",
-// import { useState } from "react";
-// import "./AddProduct.css";
-// import axios from "axios";
-// export default function AddProduct() {
-//    const[product,setProduct]=useState({
-//      productName: "",
-//     description: "",
-//     price: "",
-//     quantity: "",
-//     discount: "",
-//       brand: "", 
-//    }
-//    );
-//      const [image, setImage] = useState(null);
-//       const [categoryId, setCategoryId] = useState("");
-  
-  
-  
-//      const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     console.log(name)
-//     console.log(value)
-//     setProduct({
-//       ...product,
-//       [name]: value,
-//     });
-//   };
-
-//     const submitHandler = async (event) => {
-//        event.preventDefault();
-//        if(!categoryId){
-// alert("⚠️ Please select a category before submitting");
-// return;
-//        }
-//       // const formData = new FormData();
-// // formData.append("imageFile", image); // ✅ matches both add & update
-// // formData.append(
-// //   "productDto",
-// //   new Blob([JSON.stringify(product)], { type: "application/json" })
-// // );
-// // formData.append("imageFile", image);   
-// // formData.append("productDto", new Blob([JSON.stringify(product)], {type:"application/json"}))
-//   const formData = new FormData();
-
-// if (image) {
-//   formData.append("imageFile", image);  // ✅ only append if exists
-// }
-
-// formData.append(
-//   "productDto",
-//   new Blob([JSON.stringify(product)], { type: "application/json" })
-// );
-
-// try{
-//            const responseforadd=await axios.post(
-//   `http://localhost:8080/api/public/categories/${categoryId}/products`,
- 
-//   formData,
-//   {
-//     headers: {
-//       "Content-Type": "multipart/form-data",
-//       // Authorization: `Bearer ${localStorage.getItem("token")}`,
-//     },
-//   }
-// );
-//            console.log("✅ Product added:", responseforadd.data);
-//       alert("Product added successfully!");
-//        setProduct({
-//   productName: "",
-//   description: "",
-//   price: "",
-//   quantity: "",
-//   discount: "",
-//   brand: "",   
-// });
-//       setImage(null);
-//       setCategoryId("");
-//        }catch(error){
-//          console.error("❌ Error adding product:", error);
-//       alert("Error adding product");
-
-//        }
-//       }
-
-//      const handleImageChange = (e) => {
-//     setImage(e.target.files[0]);
-//   };
-
-
-//   return (
-//     <section className="addProductSection">
-//         <h1>Add Product</h1>
-//       <div className="addProductContainet">
-//         <form action="" onSubmit={submitHandler}>
-//           <div className="productflex">
-//             <div className="productsdetails ProductName ">
-//               <label htmlFor="">Name</label>
-//               <input type="text" placeholder="Product Name" name="productName"
-//               value={product.productName} onChange={handleInputChange} required/>
-//             </div>
-
-//             <div className="productsdetails ProductBrand">
-//               <label htmlFor=""> Brand</label>
-//               <input type="text" placeholder="Enter your Brand"    name="brand"    
-//   value={product.brand} onChange={handleInputChange} required/>
-//             </div>
-//           </div>
-
-//           <div className="productsdetails ProductDectiption">
-//             <label htmlFor=""> Description</label>
-//             <input type="text" placeholder="Add product description" name="description"
-//               value={product.description} onChange={handleInputChange} required/>
-//           </div>
-
-//           <div className="productflex">
-//             <div className="productsdetails ProductPrice">
-//               <label htmlFor=""> Price</label>
-//               <input type="number" placeholder="Eg:$1000"   name="price"
-//               value={product.price} onChange={handleInputChange} required />
-//             </div>
-
-//             <div className="productsdetails ProductPrice">
-//               <label htmlFor="">Category</label>
-//               <select name="" id=""    value={categoryId} onChange={(e)=>setCategoryId(e.target.value)} required>
-//                 <option value="">Select category</option>
-//                 <option value="1">Laptop</option>
-//                 <option value="2">Headphone</option>
-//                 <option value="3">Mobile</option>
-//                 <option value="4">Electronics</option>
-//                 <option value="5">Toys</option>
-//                 <option value="6">Fashion</option>
-//               </select>
-//             </div>
-//           </div>
-
-//           <div className="productflex">
-//             <div className="productsdetails ProductQuatity">
-//               <label htmlFor=""> Stock Quantity</label>
-//               <input type="number" placeholder="Stock Remaining"  name="quantity"
-//               value={product.quantity} onChange={handleInputChange} required />
-//             </div>
-
-//             <div className="productsdetails Productimage">
-//               <label htmlFor=""> Image</label>
-//               <input type="file" placeholder="choose image"   onChange={handleImageChange}  required/>
-//             </div>
-//           </div>
-//           <button type="submit">Add</button>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// }
 
 import { useState } from "react";
 import "./AddProduct.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   const [product, setProduct] = useState({
@@ -173,6 +16,7 @@ export default function AddProduct() {
 
   const [image, setImage] = useState(null);
   const [categoryId, setCategoryId] = useState("");
+  const navigate=useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -210,7 +54,7 @@ export default function AddProduct() {
 
     try {
       const response = await axios.post(
-        `https://ecostore-970g.onrender.com/api/public/categories/${categoryId}/products`,
+        `http://localhost:8080/api/public/categories/${categoryId}/products`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -219,6 +63,7 @@ export default function AddProduct() {
       );
       console.log("✅ Product added:", response.data);
       alert("Product added successfully!");
+      navigate("/eco-store")
 
       setProduct({
         productName: "",

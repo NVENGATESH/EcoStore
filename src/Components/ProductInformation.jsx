@@ -11,7 +11,7 @@ export default function ProductInformation() {
     const fetchProductInfo = async () => {
       try {
         const response = await axios.get(
-          `https://ecostore-970g.onrender.com/api/public/products/${id}`,
+          `http://localhost:8080/api/public/products/${id}`,
           {
             // headers: {
             //   Authorization: `Bearer ${localStorage.getItem("token")}`, // only if JWT secured
@@ -27,7 +27,7 @@ export default function ProductInformation() {
     const fetchImage = async () => {
       try {
         const response = await axios.get(
-          `https://ecostore-970g.onrender.com/api/public/product/${id}/image`,
+          `http://localhost:8080/api/public/product/${id}/image`,
           {
             // headers: {
             //   Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,13 +50,14 @@ export default function ProductInformation() {
   const updatProduct = (id) => {
     if (!id) return;
     console.log(id);
+    
     navigate(`/UpdateProduct/${id}`);
   };
 
   const deleteProductById = async (id) => {
     try {
       await axios.delete(
-        `https://ecostore-970g.onrender.com/api/admin/products/${id}`, // use correct admin endpoint
+        `http://localhost:8080/api/admin/products/${id}`, // use correct admin endpoint
         {
           headers: {
             // Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -79,6 +80,7 @@ export default function ProductInformation() {
     console.log(id);
     const choice = window.confirm("you want to delte");
     if (choice) {
+       alert(`Product ${id} Deleted  successfully.`);
       deleteProductById(id);
       navigate("/eco-store");
     }
@@ -88,13 +90,14 @@ export default function ProductInformation() {
   const AddProduct = async (AddcartId) => {
     try {
       const addCartResponce = await axios.post(
-        `https://ecostore-970g.onrender.com/api/admin/carts/${AddcartId}`,
+        `http://localhost:8080/api/admin/carts/${AddcartId}`,
         {
           headers: {
             // Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
+      alert(`Product ${AddcartId} Addtocart Add successfully.`);
        console.log(`Product ${AddcartId} Addtocart Add successfully.`);
     } catch (error) {
       console.error("ErrorAdd  AddCart product:", error);
@@ -132,34 +135,3 @@ export default function ProductInformation() {
   );
 }
 
-// productName: 'hp pevilion', imagedata: '/9j/4AAQSkZJRgABAQEASABIAAD/4QB0RXhpZgAATU0AKgAAAA…OCaMr+poTmafcBWiErU2ZuxYfD8Ncx+sI3ZzElVfSAq1dT//Z', description: 'affwsedrtfgyhuijkoperctvybunimo,p.xcrtvbyunimo,p.cvbhnjkmqwertyuio', quantity: 1, price: 1, …}
-// brand
-// :
-// "hp"
-// categoryId
-// :
-// 3
-// description
-// :
-// "affwsedrtfgyhuijkoperctvybunimo,p.xcrtvbyunimo,p.cvbhnjkmqwertyuio"
-// discount
-// :
-// 0
-// imagedata
-// :
-// "/9j/4AAQSkZJRgABAQEASABIAAD/4QB0RXhpZgAATU0AKgAAA
-// price
-// :
-// 1
-// productId
-// :
-// 9
-// productName
-// :
-// "hp pevilion"
-// quantity
-// :
-// 1
-// specialPrice
-// :
-// 0

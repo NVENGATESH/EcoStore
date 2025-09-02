@@ -1,0 +1,9 @@
+.SearchProductSection{
+    min-height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}

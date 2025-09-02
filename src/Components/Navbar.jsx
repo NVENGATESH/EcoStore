@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [showInfo, setShowInfo] = useState(false);
+   const [searchs, setSearch] = useState("");
   const userImgRef = useRef(null);
   const infoRef = useRef(null);
   const navigate=useNavigate();
@@ -41,16 +42,33 @@ export default function Navbar() {
 navigate("/Cart")
   }
 
+   function handleSubmeitSearch(e){
+      e.preventDefault()
+    console.log(e)
+   navigate(`/ProductSearch/${searchs}`)
+  
+    
+  }
+
+  function searches(e){
+  
+    setSearch(e.target.value)
+
+  }
+  function tochanheHomePage(){
+       navigate("/eco-store")
+  }
+  console.log(searchs)
   return (
     <>
       <header className="header">
         <div className="navHeaderContainer">
           <h1 className="brand">EcoStore</h1>
 
-          <form className="searchForm" action="">
+          <form className="searchForm" action="" onSubmit={handleSubmeitSearch}>
             <div className="searchInner">
                  <span className="searchIcon">🔎</span>
-              <input className="searchInput" type="text" placeholder="Search products, brands…" />
+              <input className="searchInput" type="text" placeholder="Search products, brands…" onChange={searches} onClick={tochanheHomePage} />
              
             </div>
           </form>
@@ -94,7 +112,7 @@ navigate("/Cart")
           </div>
 
           <div className="cartBtn">
-            <button aria-label="Cart" onClick={cartPagemove}>Cart <span>🛒</span></button>
+            <button aria-label="Cart" onClick={cartPagemove}> <span>🛒</span></button>
           </div>
         </div>
       </header>

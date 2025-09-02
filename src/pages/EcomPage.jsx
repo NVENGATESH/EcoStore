@@ -3,6 +3,7 @@ import "./EcoPage.css";
 import CategoryByProduct from "./CategoryByProduct";
 import OferPage from "../Components/OferPage";
 import Footer from "../Components/Footer";
+import ProductSearch from "../Components/ProductSearch";
 import AddProduct from "../Components/AddProduct";
 export default function EcoStore() {
   return (
@@ -48,6 +49,7 @@ export default function EcoStore() {
       <CategoryByProduct />
       <OferPage />
       <Footer />
+
     
     </div>
   );

@@ -11,6 +11,7 @@ import AddProduct from './Components/AddProduct'
 import ProductInformation from './Components/ProductInformation'
 import UpdateProduct from './Components/UpdateProduct'
 import Cart from './Components/Cart'
+import ProductSearch from './Components/ProductSearch'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
   <Route path="/ProductInformation/:id" element={<ProductInformation />} />
   <Route path="/UpdateProduct/:id" element={<UpdateProduct />} />
     <Route path="/Cart" element={<Cart />} />
+      <Route path="/ProductSearch/:keyword" element={<ProductSearch />} />
 </Routes>
 
     </BrowserRouter>

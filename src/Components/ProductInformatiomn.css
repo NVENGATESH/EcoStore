@@ -15,6 +15,7 @@
     /* background-color: aqua; */
     padding: 30px;
     min-height: 600px;
+    
 }
 .ProductInformationfirst{
     width: 50%;
@@ -54,6 +55,9 @@ overflow: hidden;
     font-weight: 800;
 }
 
+.ProductInformationSec p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .prodcinfobtncon{
     
     display: flex;
@@ -84,4 +88,27 @@ overflow: hidden;
 .prodcinfobtncon button:nth-child(2){
     background-color: red;
     width: 60%;
+}
+@media (max-width: 765px) {
+.ProductInformationContainer{
+width: 100%;
+flex-direction: column;
+}
+.ProductInformationfirst{
+    width: 100%;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #1976d2; */
+    padding: 30px;
+   
+}
+.ProductInformationfirst .ProductInformationimgcon{
+width: 450px;
+height: 250px;
+overflow: hidden;
+  border-radius: 8px;
+}
+
+
 }
