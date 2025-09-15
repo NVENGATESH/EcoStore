@@ -15,7 +15,7 @@ export default function ProductInformation() {
     const fetchProductInfo = async () => {
       try {
         const response = await axios.get(
-          `https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`
+          `http://localhost:8080/api/public/products/${id}`
         );
         setProduct(response.data);
         console.log("Fetched Product:", response.data);
@@ -27,7 +27,7 @@ export default function ProductInformation() {
     const fetchImage = async () => {
       try {
         const response = await axios.get(
-          `https://ecomerseprojectecostore.onrender.com/api/public/product/${id}/image`,
+          `http://localhost:8080/api/public/product/${id}/image`,
           {
             responseType: "blob",
           }
@@ -52,7 +52,7 @@ export default function ProductInformation() {
   const deleteProductById = async (id) => {
     try {
       await axios.delete(
-        `https://ecomerseprojectecostore.onrender.com/api/admin/products/${id}`,
+        `http://localhost:8080/api/admin/products/${id}`,
         {
           withCredentials: true, // ⬅️ Send JWT cookie
         }
@@ -76,7 +76,7 @@ export default function ProductInformation() {
   const AddProduct = async (AddcartId) => {
     try {
       await axios.post(
-        `https://ecomerseprojectecostore.onrender.com/api/admin/carts/${AddcartId}`,
+        `http://localhost:8080/api/admin/carts/${AddcartId}`,
         {},
         {
           withCredentials: true,

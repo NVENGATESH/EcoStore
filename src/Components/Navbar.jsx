@@ -46,7 +46,7 @@ export default function Navbar() {
   useEffect(() => {
     const loadCurrentUser = async () => {
       try {
-        const response = await axios.get("https://ecomerseprojectecostore.onrender.com/api/auth/userinfoss", {
+        const response = await axios.get("http://localhost:8080/api/auth/userinfoss", {
           withCredentials: true,
         });
         setUser(response.data);
@@ -83,7 +83,7 @@ const handleSearchSubmit = (e) => {
 
   const handleLogout = async () => {
     try {
-      const endpoint = "https://ecomerseprojectecostore.onrender.com/api/auth/logout";
+      const endpoint = "http://localhost:8080/api/auth/logout";
       await axios.post(endpoint, {}, { withCredentials: true });
       setUser(null);
       navigate("/login");

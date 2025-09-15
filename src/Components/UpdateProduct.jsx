@@ -24,7 +24,7 @@ export default function AddProduct() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`,
+          `http://localhost:8080/api/public/products/${id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -79,7 +79,7 @@ export default function AddProduct() {
       );
 
       const response = await axios.put(
-        `https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`,
+        `http://localhost:8080/api/public/products/${id}`,
         // /public/categories/{ProductId}/products
         formData,
         {

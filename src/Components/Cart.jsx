@@ -14,7 +14,7 @@ export default function Cart() {
     const fetchCart = async () => {
       try {
         const response = await axios.get(
-          "https://ecomerseprojectecostore.onrender.com/api/public/carts",{
+          "http://localhost:8080/api/public/carts",{
 withCredentials: true
           }
           
@@ -38,7 +38,7 @@ withCredentials: true
       try {
         const responses = await Promise.all(
           clickedarry.map((id) =>
-            axios.get(`https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`)
+            axios.get(`http://localhost:8080/api/public/products/${id}`)
           )
         );
         const productData = responses.map((res) => res.data);
@@ -87,7 +87,7 @@ console.log(eachPrice["2"]);
                 <div className="cartProductimgcon">
                   {" "}
                   <img
-                    src={`https://ecomerseprojectecostore.onrender.com/api/public/product/${data}/image`}
+                    src={`http://localhost:8080/api/public/product/${data}/image`}
                     alt="Product"
                   />
                 </div>

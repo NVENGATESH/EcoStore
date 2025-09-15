@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
     padding: 20px;
-   background-color: black;
+   
     display: flex;
     justify-content: center;
     color: white;
@@ -19,6 +19,7 @@
     border-radius: 1rem;
     overflow: hidden;
     /* min-height: 350px; */
+    box-shadow: 0px 0px 1px gray;
 }
 .loginwholediv .loginFirstConatiner{
     width: 50%;
@@ -133,7 +134,7 @@ padding: 10px;
 }
 @media screen and (max-width: 800px) {
 .loginwholediv{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -150,7 +151,9 @@ padding: 10px;
 .loginwholediv .loginSecoundcontainer{
     width: 100%;
 }
- 
+ .loginSecoundcontainer button{
+    width: 70%;
+ }
 }
 .loginwholediv .google{
     margin: auto;

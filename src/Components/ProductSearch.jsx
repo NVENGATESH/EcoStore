@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "../Components/ProductCard";
+import Navbar from "../Components/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
 import './ProductSearch.css'
 
@@ -14,7 +15,7 @@ export default function ProductSearch() {
     const searchProductFetch = async () => {
       try {
         const responce = await axios.get(
-          `https://ecomerseprojectecostore.onrender.com/api/public/products/keyword/${keyword}`
+          `http://localhost:8080/api/public/products/keyword/${keyword}`
         );
         console.log(responce.data.content);
         setSearchProduct(responce.data.content);
@@ -29,7 +30,7 @@ export default function ProductSearch() {
   const fetchImage = async (id) => {
     try {
       const response = await axios.get(
-        `https://ecomerseprojectecostore.onrender.com/api/public/product/${id}/image`,
+        `http://localhost:8080/api/public/product/${id}/image`,
         {
           responseType: "blob",
         }
@@ -50,6 +51,7 @@ export default function ProductSearch() {
   console.log(imageUrls)
   return (
     <div>
+      <Navbar/>
       <section className="SearchProductSection">
  {searchProduct.length === 0 ? (
   <p>No Product Found</p>

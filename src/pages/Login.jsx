@@ -16,7 +16,7 @@ export default function Login() {
     setSuccessMsg(""); // clear previous success
 
     try {
-      const response = await fetch("https://ecomerseprojectecostore.onrender.com/api/auth/signin", {
+      const response = await fetch("http://localhost:8080/api/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,9 @@ export default function Login() {
       }
 
       // Login success
+      
       setSuccessMsg("Login successful!");
+      localStorage.setItem("isLoggedIn", "true");
       console.log("Login successful:", data);
 
       // Store JWT token and user info
@@ -61,7 +63,7 @@ export default function Login() {
   };
 
   const googleAuth = () => {
-    window.location.href = "https://ecomerseprojectecostore.onrender.com/oauth2/authorization/google";
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
   };
 
   return (

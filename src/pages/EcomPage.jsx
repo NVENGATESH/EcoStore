@@ -7,6 +7,7 @@ import ProductSearch from "../Components/ProductSearch";
 import AddProduct from "../Components/AddProduct";
 export default function EcoStore() {
   return (
+    <> <Navbar/>
     <div className="conatiner">
       <section className="homesection">
         <div className="homeconatiner">
@@ -52,5 +53,6 @@ export default function EcoStore() {
 
     
     </div>
+     </>
   );
 }

@@ -18,14 +18,14 @@ export default function CategoryByProduct() {
       try {
         // 🔧 Fetch categories
         const categoryRes = await axios.get(
-          "https://ecomerseprojectecostore.onrender.com/api/public/categories",
+          "http://localhost:8080/api/public/categories",
           { withCredentials: true } // 🔧 add this
         );
         setCategories([{ categoryId: 0, categoryName: "All" }, ...categoryRes.data.content]);
 
         // 🔧 Fetch all products
         const productRes = await axios.get(
-          "https://ecomerseprojectecostore.onrender.com/api/public/products",
+          "http://localhost:8080/api/public/products",
           { withCredentials: true } // 🔧 add this
         );
         setProduct(productRes.data.content);
@@ -43,7 +43,7 @@ export default function CategoryByProduct() {
   const fetchImage = async (id) => {
     try {
       const response = await axios.get(
-        `https://ecomerseprojectecostore.onrender.com/api/public/product/${id}/image`,
+        `http://localhost:8080/api/public/product/${id}/image`,
         {
           responseType: "blob",
           withCredentials: true, // 🔧 add this
