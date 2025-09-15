@@ -54,12 +54,13 @@ export default function AddProduct() {
 
     try {
       const response = await axios.post(
-        `https://ecostore-970g.onrender.com/api/public/categories/${categoryId}/products`,
+        `https://ecomerseprojectecostore.onrender.com/api/public/categories/${categoryId}/products`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
-          // withCredentials: true // uncomment if using cookies
-        }
+          withCredentials: true // uncomment if using cookies
+        },
+         
       );
       console.log("✅ Product added:", response.data);
       alert("Product added successfully!");

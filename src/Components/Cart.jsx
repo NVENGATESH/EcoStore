@@ -14,7 +14,10 @@ export default function Cart() {
     const fetchCart = async () => {
       try {
         const response = await axios.get(
-          "https://ecostore-970g.onrender.com/api/public/carts"
+          "https://ecomerseprojectecostore.onrender.com/api/public/carts",{
+withCredentials: true
+          }
+          
         );
         setAllCart(response.data.cartDtos || []); // default to empty array
         //   const arr = response.data.cartDtos .filter(a => a.clicked?a.productIds:"");
@@ -35,7 +38,7 @@ export default function Cart() {
       try {
         const responses = await Promise.all(
           clickedarry.map((id) =>
-            axios.get(`https://ecostore-970g.onrender.com/api/public/products/${id}`)
+            axios.get(`https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`)
           )
         );
         const productData = responses.map((res) => res.data);
@@ -84,7 +87,7 @@ console.log(eachPrice["2"]);
                 <div className="cartProductimgcon">
                   {" "}
                   <img
-                    src={`https://ecostore-970g.onrender.com/api/public/product/${data}/image`}
+                    src={`https://ecomerseprojectecostore.onrender.com/api/public/product/${data}/image`}
                     alt="Product"
                   />
                 </div>

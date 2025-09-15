@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
 
@@ -12,15 +12,28 @@ import ProductInformation from './Components/ProductInformation'
 import UpdateProduct from './Components/UpdateProduct'
 import Cart from './Components/Cart'
 import ProductSearch from './Components/ProductSearch'
+import NotFound from './Components/NotFound'
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log(token+"token")
+    if(token)
+    setIsLoggedIn(!!token);
+  }, []);
+
   return (
     <>
     
     <BrowserRouter>
-    <Navbar/>
+   
+     <Navbar/>
   
   <Routes>
+           
     <Route path="/" element={<Navigate to="/login" replace />} />
 <Route path="/login" element={<Login />} />
   <Route path='/register' element={<Register />} />
@@ -30,6 +43,7 @@ function App() {
   <Route path="/UpdateProduct/:id" element={<UpdateProduct />} />
     <Route path="/Cart" element={<Cart />} />
       <Route path="/ProductSearch/:keyword" element={<ProductSearch />} />
+       <Route path="*" element={<NotFound />} />
 </Routes>
 
     </BrowserRouter>

@@ -8,6 +8,7 @@
     color: white;
     align-items: center;
     box-shadow: 0px 0px 120px black;
+    padding-top: 100px;
     
 }
 .Registerwholediv{
@@ -88,13 +89,22 @@ padding: 10px;
 
   margin: 20px;
 }
-.UsernameCon input, .Passwordcon input,.Emailcon input, .conformPasswordcon input {
+.UsernameCon input, .Passwordcon input,.Emailcon input, .conformPasswordcon input,.OtpCon input {
    width: 100%;
   padding: 13px;
   border-radius: 13px;
   border: 1px solid #ccc;
   outline: none;
   background: #fff;
+}
+.OtpCon input{
+    width: 50%;
+    margin: 20px;
+    
+}
+.OtpCon label{
+    display: block;
+    margin: 10px;
 }
 
 .UsernameCon label, .Passwordcon label,.Emailcon label, .conformPasswordcon label {
@@ -151,5 +161,31 @@ padding: 10px;
 .Registerwholediv .RegisterSecoundcontainer{
     width: 100%;
 }
+.google{
+    width: 100%;
+    margin: 20px;
+}
  
+}
+
+.Registerwholediv .google{
+    margin: auto;
+    width: 70%;
+    margin-bottom: 20px;
+    color: white;
+}
+.errorMsg {
+  color: red;
+  font-size: 0.9rem;
+}
+.successMsg {
+  color: green;
+  font-size: 0.9rem;
+}
+
+
+
+.linkrout{
+    color: blue;
+    text-decoration: underline;
 }

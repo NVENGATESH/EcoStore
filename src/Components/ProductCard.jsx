@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <div className="productCardContainer" onClick={()=>{handlekey(id)}}>
       <div className="Prodctfircon">
-        <img src={image} alt={title} />
+        <img src={image || "/placeholder.png"} alt={title} />
         {badge && <span>{badge}</span>}
         <button aria-label="Add to wishlist">♡</button>
       </div>

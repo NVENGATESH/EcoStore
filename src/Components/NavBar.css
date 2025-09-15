@@ -95,6 +95,13 @@
   } */
 
 }
+
+@media (max-width: 400px) {
+    .userInfoContainer {
+        width: 90vw;
+        left: -220px;
+    }
+}
 .searchInner { position: relative;
 
  

@@ -1,22 +1,21 @@
+
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductInformatiomn.css";
+
 export default function ProductInformation() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [imageUrls, setImageUrls] = useState({});
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchProductInfo = async () => {
       try {
         const response = await axios.get(
-          `https://ecostore-970g.onrender.com/api/public/products/${id}`,
-          {
-            // headers: {
-            //   Authorization: `Bearer ${localStorage.getItem("token")}`, // only if JWT secured
-            // },
-          }
+          `https://ecomerseprojectecostore.onrender.com/api/public/products/${id}`
         );
         setProduct(response.data);
         console.log("Fetched Product:", response.data);
@@ -24,20 +23,17 @@ export default function ProductInformation() {
         console.error("Error fetching product:", error);
       }
     };
+
     const fetchImage = async () => {
       try {
         const response = await axios.get(
-          `https://ecostore-970g.onrender.com/api/public/product/${id}/image`,
+          `https://ecomerseprojectecostore.onrender.com/api/public/product/${id}/image`,
           {
-            // headers: {
-            //   Authorization: `Bearer ${localStorage.getItem("token")}`,
-            // },
             responseType: "blob",
           }
         );
         const url = URL.createObjectURL(response.data);
         setImageUrls((prev) => ({ ...prev, [id]: url }));
-       
       } catch (error) {
         console.error("Error fetching image:", error);
       }
@@ -50,26 +46,19 @@ export default function ProductInformation() {
   const updatProduct = (id) => {
     if (!id) return;
     console.log(id);
-    
     navigate(`/UpdateProduct/${id}`);
   };
 
   const deleteProductById = async (id) => {
     try {
       await axios.delete(
-        `https://ecostore-970g.onrender.com/api/admin/products/${id}`, // use correct admin endpoint
+        `https://ecomerseprojectecostore.onrender.com/api/admin/products/${id}`,
         {
-          headers: {
-            // Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+          withCredentials: true, // ⬅️ Send JWT cookie
         }
       );
-
-      // Remove deleted product from state
-      setProducts((prev) => prev.filter((p) => p.id !== id));
       console.log(`Product ${id} deleted successfully.`);
-       
-
+      navigate("/eco-store"); // Go back to product list
     } catch (error) {
       console.error("Error deleting product:", error);
     }
@@ -77,32 +66,29 @@ export default function ProductInformation() {
 
   const deleteProduct = (id) => {
     if (!id) return;
-    console.log(id);
-    const choice = window.confirm("you want to delte");
+    const choice = window.confirm("Are you sure you want to delete?");
     if (choice) {
-       alert(`Product ${id} Deleted  successfully.`);
+      alert(`Product ${id} deleted successfully.`);
       deleteProductById(id);
-      navigate("/eco-store");
     }
   };
-  // console.log(product)
-  //  console.log(product.productId)
+
   const AddProduct = async (AddcartId) => {
     try {
-      const addCartResponce = await axios.post(
-        `https://ecostore-970g.onrender.com/api/admin/carts/${AddcartId}`,
+      await axios.post(
+        `https://ecomerseprojectecostore.onrender.com/api/admin/carts/${AddcartId}`,
+        {},
         {
-          headers: {
-            // Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+          withCredentials: true,
         }
       );
-      alert(`Product ${AddcartId} Addtocart Add successfully.`);
-       console.log(`Product ${AddcartId} Addtocart Add successfully.`);
+      alert(`Product ${AddcartId} added to cart successfully.`);
+      console.log(`Product ${AddcartId} added to cart successfully.`);
     } catch (error) {
-      console.error("ErrorAdd  AddCart product:", error);
+      console.error("Error adding to cart:", error);
     }
   };
+
   return (
     <section className="ProductInformationSection">
       <div className="ProductInformationContainer">
@@ -115,7 +101,7 @@ export default function ProductInformation() {
           </div>
         </div>
 
-        {product && ( // render only when product is loaded
+        {product && (
           <div className="ProductInformationSec">
             <h1>{product.productName}</h1>
             <h5>{product.brand}</h5>
